@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 376 50" style="enable-background:new 0 0 376 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st2{mask:url(#b_00000005268231535595485740000012905057202500986284_);fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st3{filter:url(#Adobe_OpacityMaskFilter_00000030473455587477651750000010320003103309827499_);}
+	.st4{mask:url(#d_00000145765447653918934800000003467862795245786506_);fill-rule:evenodd;clip-rule:evenodd;}
+</style>
+<g>
+	<g transform="translate(187 35.291)">
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="3" y="-6" width="0" height="0">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="3" y="-6" width="0" height="0" id="b_00000005268231535595485740000012905057202500986284_">
+			<g class="st0">
+				<path id="a_00000112607955971986007660000002295502344724559037_" class="st1" d="M10,20H3.1V-5.5H10C10-5.5,10,20,10,20z"/>
+			</g>
+		</mask>
+		<path class="st2" d="M3-6"/>
+	</g>
+	<path class="st1" d="M3-6"/>
+	<g transform="translate(0 -.709)">
+		<defs>
+			
+				<filter id="Adobe_OpacityMaskFilter_00000145772854595887219440000010852699696125612422_" filterUnits="userSpaceOnUse" x="3" y="15.7" width="370.1" height="20">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		
+			<mask maskUnits="userSpaceOnUse" x="3" y="15.7" width="370.1" height="20" id="d_00000145765447653918934800000003467862795245786506_">
+			<g style="filter:url(#Adobe_OpacityMaskFilter_00000145772854595887219440000010852699696125612422_);">
+				<path id="c_00000099656388158759979490000014196745827498355841_" class="st1" d="M373,15.7v19.9H3V15.7L373,15.7z"/>
+			</g>
+		</mask>
+		<path class="st4" d="M342.1,35.7c29.1-2.8,30.9-18.4,30.9-18.4c0.4-1.8-0.7-2.2-1.6-0.8c-8.8,13.9-31.2,14.9-31.2,14.9
+			s-78,0-152.1,0c-74.1,0-152.1,0-152.1,0s-22.4-1-31.2-14.9c-0.9-1.4-2-1-1.6,0.8c0,0,1.7,15.6,30.9,18.4"/>
+	</g>
+</g>
+</svg>

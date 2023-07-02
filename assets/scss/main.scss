@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* global variables */
+
+/* color */
+$grey-bg: #D9D9D9;
+$grey-border: #707070;
+$main-color: #00c0d0;
+$white: #ffffff;
+$font-dark: #333333;
+
+/* sizes */
+$size-h2: 30px;
+$size-h3: 22px;
+$size-lead: 20px;
+$size-text: 16px;
+$size-input: 18px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: $main-color;
+  font-size: $size-h2;
+  font-weight: 700;
+  line-height: 41px;
+  margin-bottom: 68px;
+}
+
+h3 {
+  /* margin-top: 18px; */
+  margin-top: 45px;
+  margin-bottom: 15px;
+  color: $font-dark;
+  font-size: $size-h3;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+p {
+  font-size: $size-text;
+  font-weight: 300;
+}
+
+.p-lead {
+  font-size: $size-lead;
+  margin-bottom: 45px;
+}
+
+/* button styles */
+.btn {
+  background-color: $main-color;
+  border-shadow: none;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: $size-lead;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00c6d9;
+  }
+
+}
+
+/* link styles */
+a {
+  color: $main-color;
+  text-decoration: none;
+}
