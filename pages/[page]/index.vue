@@ -21,7 +21,7 @@
 <script setup>
 import { watch, ref } from 'vue';
 import { useConfigStore } from "~/stores/main";
-import { updateConfig, selectionUrl, getSelection } from '/init/selection';
+import { updateConfig, isValid, selectionUrl, getSelection } from '/init/selection';
 
 const { page } = useRoute().params;
 const route = useRoute();
@@ -35,8 +35,8 @@ useHead({
     { name: 'description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
     { name: 'og:description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
     { name: 'title', content: 'Schau dir mein selbst generiertes Snowboard in 3D an!' },
-    { name: 'url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
-    { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
+    { name: 'url', content: 'https://' + 'snowconf.vercel.app' + '/start?code=' + storeConfig.config },
+    { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start?code=' + storeConfig.config },
   ]
 });
 
@@ -46,8 +46,10 @@ watch(() => route.hash, (newHash, oldHash) => { });
 onMounted(() => {
   if(storeConfig.config !== '') {
     return;
-  } else if(route.hash != '') {
+  } else if(route.hash != '' && isValid(route.hash)) {
     updateConfig(route.hash);
+  } else if(route.query.code != '' && isValid(route.query.code)) {
+    updateConfig(route.query.code);
   } else {
     updateConfig(null)
   }

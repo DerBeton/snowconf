@@ -125,8 +125,8 @@ function saveCanvas() {
     useHead({
       meta: [
         { name: 'og:image', content: URL.createObjectURL(blob) },
-        { name: 'url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
-        { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
+        { name: 'url', content: 'https://' + 'snowconf.vercel.app' + 'start?code=' + storeConfig.config },
+        { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start?code=' + storeConfig.config },
       ],
     })
   });

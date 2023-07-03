@@ -64,20 +64,20 @@ function gotoPage(page) {
 
 // https://api.whatsapp.com/send?text=Schau+dir+mein+selbst+generiertes+Snowboad+in+3D+an:+https://snowconf.vercel.app/start
 const whatsappLink = computed(() => {
-  let path = 'https://' + window.location.host + '/start/#' + storeConfig.config;
+  let path = 'https://' + window.location.host + '/start?code=' + storeConfig.config;
   let msg = 'Schau+dir+mein+selbst+generiertes+Snowboad+in+3D+an:';
   return 'https://api.whatsapp.com/send?text=' + msg + '+' + path;
 });
 
 // https://twitter.com/intent/tweet?text=DEIN+NACHRICHTENTEXT+HIER
 const twitterLink = computed(() => {
-  let path = 'https://' + window.location.host + '/start/#' + storeConfig.config;
+  let path = 'https://' + window.location.host + '/start?code=' + storeConfig.config;
   let msg = 'Schau+dir+mein+selbst+generiertes+Snowboad+in+3D+an:';
   return 'https://twitter.com/intent/tweet?text=' + msg + '+' + path;
 });
 
 const linkedInLink = computed(() => {
-  let path = 'https://' + window.location.host + '/start/#' + storeConfig.config;
+  let path = 'https://' + window.location.host + '/start?code=' + storeConfig.config;
   // let path = 'https://' + window.location.host + '/start/';
   return 'https://www.linkedin.com/sharing/share-offsite/?url=' + path;
 });
