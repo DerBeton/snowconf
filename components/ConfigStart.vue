@@ -56,6 +56,7 @@ function gotoConf() {
 
 .conf-container {
   width: 750px;
+  max-width: 100%;
   background-color: white;
   padding: 50px 60px;
   display: flex;
@@ -90,6 +91,20 @@ function gotoConf() {
 .conf-nav {
   margin-top: auto;
   align-self: flex-end;
+}
+
+/* make little bit responsive */
+@media only screen and (max-width: 1020px)  {
+  .conf-container {
+    padding: 30px 20px;
+    height: fit-content;
+    /* height: 100%; */
+  }
+
+  .conf-nav {
+    margin-top: 30px;
+  }
+
 }
 
 </style>

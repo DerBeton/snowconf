@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
     ],
     app: {
-        baseURL: '/'
+        baseURL: '/',
     },
     head: {
         link: [

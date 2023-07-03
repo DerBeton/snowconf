@@ -23,21 +23,22 @@ import { watch, ref } from 'vue';
 import { useConfigStore } from "~/stores/main";
 import { updateConfig, selectionUrl, getSelection } from '/init/selection';
 
-useHead({
-  title: 'SnowConf',
-  meta: [
-    { name: 'description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
-    { name: 'og:description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
-    { name: 'title', content: 'Schau dir mein selbst generiertes Snowboard in 3D an!' },
-    { name: 'og:title', content: 'Schau dir mein selbst generiertes Snowboard in 3D an!' }
-  ]
-})
-
-
 const { page } = useRoute().params;
 const route = useRoute();
 const router = useRouter();
 const storeConfig = useConfigStore();
+
+useHead({
+  title: 'SnowConf',
+  meta: [
+    { name: 'og:title', content: 'Schau dir mein selbst generiertes Snowboard in 3D an!' },
+    { name: 'description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
+    { name: 'og:description', content: 'Interaktiver 3D Snowboard Konfigurator im Web.' },
+    { name: 'title', content: 'Schau dir mein selbst generiertes Snowboard in 3D an!' },
+    { name: 'url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
+    { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
+  ]
+});
 
 // with this a update could be triggered if someone changes the url
 watch(() => route.hash, (newHash, oldHash) => { });

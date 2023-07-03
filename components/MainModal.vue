@@ -85,10 +85,6 @@ const { type } = toRefs(props)
   width: 25px;
 }
 
-.check {
-  width: 150px;
-}
-
 h6 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
@@ -116,6 +112,15 @@ button {
   font-size: 14px;
   border-radius: 16px;
   margin-top: 50px;
+}
+
+@media only screen and (max-width: 1020px)  {
+  .modal {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 40px;
+    overflow-y: scroll;
+  }
 }
 
 </style>

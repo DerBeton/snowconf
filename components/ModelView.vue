@@ -18,11 +18,12 @@ import {
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from "three/addons/controls/OrbitControls";
-import {useBaseStore, useModelStore, useTextureStore} from '@/stores/main.js';
+import {useBaseStore, useModelStore, useTextureStore, useConfigStore} from '@/stores/main.js';
 
 const storeModel = useModelStore();
 const storeTexture = useTextureStore();
 const storeBase = useBaseStore();
+const storeConfig = useConfigStore();
 
 const experience_container = ref(null);
 const experience = ref(null);
@@ -30,6 +31,11 @@ let renderer;
 let controls;
 let width = window.innerWidth - 750;
 let height = window.innerHeight - 750;
+
+// mobile / tablet
+if(window.innerWidth < 1020) {
+  height = 400;
+}
 
 window.addEventListener( 'resize', updateSize, false );
 
@@ -71,8 +77,7 @@ function loadModel(path, mat = storeTexture.material, base = storeBase.material)
     currentModell.getObjectByName('board-base').material = base;
 
     scene.add( currentModell );
-    // saveCanvas();
-    getCanvasImage();
+    saveCanvas();
 
   }, undefined, (error) => {
     console.error(error);
@@ -112,34 +117,19 @@ function setRenderer() {
   }
 }
 
-/* used to create a meta tag with preview image of configured board */
+/* used to create a meta tag with preview image of configured board. Doesn't work because canvas is not renderd on server... */
 function saveCanvas() {
   renderer.render(scene, camera);
   let canva = document.getElementById('canvas');
   canva.toBlob((blob) => {
-
-    let img = URL.createObjectURL(blob);
-    let path = img.replace('blob:', '');
-
     useHead({
       meta: [
-        { name: 'og:image', content: path }
+        { name: 'og:image', content: URL.createObjectURL(blob) },
+        { name: 'url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
+        { name: 'og:url', content: 'https://' + 'snowconf.vercel.app' + '/start/' + storeConfig.config },
       ],
     })
   });
-}
-
-function getCanvasImage() {
-  const canvas = document.getElementById('canvas');
-  const dataURL = canvas.toDataURL('image/png'); // Hier kannst du das gewünschte Bildformat angeben
-  // dataURL;
-
-  useHead({
-    meta: [
-      { name: 'og:image', content: dataURL }
-    ],
-  })
-
 }
 
 onMounted(() => {
@@ -164,5 +154,15 @@ const loop = () => {
   width: 100%;
   height: 100%;
 }
+
+/* make little bit responsive */
+@media only screen and (max-width: 1020px)  {
+
+  .experience-container {
+    height: 400px;
+  }
+
+}
+
 
 </style>

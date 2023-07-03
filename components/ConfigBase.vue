@@ -1,5 +1,5 @@
 <template>
-  <div class="conf_slider">
+  <div id="conf-slider-base" class="conf_slider">
 
     <div v-bind:class="{ active: storeBase.color == '#000000'}" v-on:click="changeBase('#000000')" class="top_option">
       <div style="background-color: #000000" class="base-color"></div>

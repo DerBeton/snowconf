@@ -35,6 +35,7 @@
           <div class="conf-slider">
             <ConfigTop />
           </div>
+          <div v-on:click="scrollRight('conf-slider-top', 68)" class="conf-slider-arrow conf-slider-arrow-top"><img src="/icons/right-arrow.svg" alt="Right Arrow"></div>
         </div>
 
         <div class="conf-section">
@@ -42,6 +43,7 @@
           <div class="conf-slider">
             <ConfigBase />
           </div>
+          <div v-on:click="scrollRight('conf-slider-base', 68)" class="conf-slider-arrow conf-slider-arrow-base"><img src="/icons/right-arrow.svg" alt="Right Arrow"></div>
         </div>
 
       </div>
@@ -97,10 +99,11 @@ storeTexture.$subscribe((mutation, state) => {
   }
 });
 
-function scrollRight(target) {
+function scrollRight(target, amount = 305) {
   let el = document.getElementById(target);
+  console.log(el);
   el.style.scrollBehavior = 'smooth';
-  el.scrollLeft += 305;
+  el.scrollLeft += amount;
 }
 function actModal(type) {
   modalType.value = type;
@@ -117,6 +120,7 @@ $grey-border: #707070;
 
 .conf-container {
   width: 750px;
+  max-width: 100%;
   background-color: white;
   padding: 50px 60px;
   display: flex;
@@ -165,6 +169,11 @@ $grey-border: #707070;
   top: 87px;
 }
 
+.conf-slider-arrow-base, .conf-slider-arrow-top  {
+  display: none;
+  top: 74px;
+}
+
 .conf-title {
   margin-top: 18px;
   position: relative;
@@ -175,6 +184,24 @@ $grey-border: #707070;
   margin-left: 5px;
   top: 4px;
   cursor: pointer;
+}
+
+/* make little bit responsive */
+@media only screen and (max-width: 1020px)  {
+  .conf-container {
+    padding: 30px 20px;
+    height: fit-content;
+    /* height: 100%; */
+  }
+
+  .conf-nav {
+    margin-top: 30px;
+  }
+
+  .conf-slider-arrow-base, .conf-slider-arrow-top  {
+    display: block;
+  }
+
 }
 
 </style>

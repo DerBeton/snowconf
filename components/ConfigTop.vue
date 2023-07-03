@@ -1,5 +1,5 @@
 <template>
-  <div class="conf_slider">
+  <div id="conf-slider-top" class="conf_slider">
 
     <div v-bind:class="{ active: storeTexture.name === 'tex_low-poly' }" v-on:click="changeTexture('tex_low-poly')" class="top_option">
       <img src="/config/top/top-6.png" alt="Snowboard Top 6">
