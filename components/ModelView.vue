@@ -71,7 +71,8 @@ function loadModel(path, mat = storeTexture.material, base = storeBase.material)
     currentModell.getObjectByName('board-base').material = base;
 
     scene.add( currentModell );
-    saveCanvas();
+    // saveCanvas();
+    getCanvasImage();
 
   }, undefined, (error) => {
     console.error(error);
@@ -117,12 +118,28 @@ function saveCanvas() {
   let canva = document.getElementById('canvas');
   canva.toBlob((blob) => {
 
+    let img = URL.createObjectURL(blob);
+    let path = img.replace('blob:', '');
+
     useHead({
       meta: [
-        { name: 'og:image', content: URL.createObjectURL(blob) }
+        { name: 'og:image', content: path }
       ],
     })
   });
+}
+
+function getCanvasImage() {
+  const canvas = document.getElementById('canvas');
+  const dataURL = canvas.toDataURL('image/png'); // Hier kannst du das gewünschte Bildformat angeben
+  // dataURL;
+
+  useHead({
+    meta: [
+      { name: 'og:image', content: dataURL }
+    ],
+  })
+
 }
 
 onMounted(() => {
