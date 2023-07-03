@@ -101,7 +101,6 @@ storeTexture.$subscribe((mutation, state) => {
 
 function scrollRight(target, amount = 305) {
   let el = document.getElementById(target);
-  console.log(el);
   el.style.scrollBehavior = 'smooth';
   el.scrollLeft += amount;
 }

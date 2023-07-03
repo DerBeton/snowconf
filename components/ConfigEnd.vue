@@ -77,8 +77,8 @@ const twitterLink = computed(() => {
 });
 
 const linkedInLink = computed(() => {
-  let path = 'https://' + window.location.host + '/start/' + storeConfig.config;
-  let msg = 'Schau+dir+mein+selbst+generiertes+Snowboad+in+3D+an.';
+  // let path = 'https://' + window.location.host + '/start/' + storeConfig.config; -> doesn't work with config
+  let path = 'https://' + window.location.host + '/start/';
   return 'https://www.linkedin.com/sharing/share-offsite/?url=' + path;
 });
 

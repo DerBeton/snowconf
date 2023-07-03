@@ -25,7 +25,7 @@
       <img src="/config/top/top-8.png" alt="Snowboard Top 8">
     </div>
 
-    <div v-bind:class="{ active: storeTexture.name === 'tex_fantasy-landscape' }" v-on:click="changeTexture('tex_fantasy-landscape')" class="top_option">
+    <div v-bind:class="{ active: storeTexture.name === 'tex_jungle' }" v-on:click="changeTexture('tex_jungle')" class="top_option">
       <img src="/config/top/top-9.png" alt="Snowboard Top 9">
     </div>
 

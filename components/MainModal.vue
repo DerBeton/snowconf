@@ -71,6 +71,7 @@ const { type } = toRefs(props)
   height: fit-content;
   width: 700px;
   margin-top: 10%;
+  margin-bottom: 10%;
   padding: 60px;
   border-radius: 10px;
   z-index: 900;
@@ -115,12 +116,17 @@ button {
 }
 
 @media only screen and (max-width: 1020px)  {
+
+  .modal-overlay {
+    overflow-y: scroll;
+  }
+
   .modal {
     margin-left: 10px;
     margin-right: 10px;
     padding: 40px;
-    overflow-y: scroll;
   }
+
 }
 
 </style>

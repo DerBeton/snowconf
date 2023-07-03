@@ -36,7 +36,7 @@ export const config_01 = {
             '04': "tex_blue-lines",
             '05': "tex_fireball",
             '06': "tex_fingerprint",
-            '07': "tex_fantasy-landscape"
+            '07': "tex_jungle"
         }
     },
     base: {

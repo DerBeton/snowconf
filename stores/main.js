@@ -21,7 +21,7 @@ export const useTextureStore = defineStore({
     actions: {
         changeTexture(texture) {
             this.name = texture;
-            this.path = '/textures/' + texture + '.png';
+            this.path = '/textures/compressed/' + texture + '.png';
         }
     }
 });
