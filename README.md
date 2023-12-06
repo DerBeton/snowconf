@@ -1,42 +1,11 @@
-# Nuxt 3 Minimal Starter
+# Interactive snowboard configurator in 3D
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+During my Mentorat last semester I created a interactive snowboard configurator in 3D.
 
-## Setup
+https://github.com/DerBeton/snowconf/assets/32222199/76a15c91-ffcd-4575-9e69-33bfd93ae64b
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Technologies
+- Nuxt 3
+- ThreeJS
+- Cinema4D to create 3D models
+- Midjourney to generate textures
