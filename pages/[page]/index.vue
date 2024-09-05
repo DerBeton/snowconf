@@ -7,11 +7,11 @@
         <ModelView ref="threejs-container" class="threejs-container" />
       </ClientOnly>
 
-      <ConfigStart ref="test" v-if="page == 'start'" />
+      <ConfigStart ref="test" v-if="page === 'start'" />
 
-      <ConfigMain ref="configstart-container" v-if="page == 'config'" />
+      <ConfigMain ref="configstart-container" v-if="page === 'config'" />
 
-      <ConfigEnd ref="configend-container" v-if="page == 'share'" />
+      <ConfigEnd ref="configend-container" v-if="page === 'share'" />
 
     </div>
 

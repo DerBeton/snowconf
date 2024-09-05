@@ -8,15 +8,15 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.3.1",
-    "sass": "^1.59.3",
-    "three": "^0.150.1"
+    "nuxt": "^3.13.1",
+    "sass": "^1.78.0",
+    "three": "^0.168.0"
   },
   "overrides": {
     "vue": "latest"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.7",
-    "pinia": "^2.0.33"
+    "@pinia/nuxt": "^0.5.4",
+    "pinia": "^2.2.2"
   }
 }

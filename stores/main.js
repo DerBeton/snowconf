@@ -1,20 +1,23 @@
-import { defineStore } from 'pinia';
-import {MeshBasicMaterial, TextureLoader} from "three";
+import {createPinia, defineStore, setActivePinia} from 'pinia';
+import {MeshBasicMaterial, SRGBColorSpace, TextureLoader} from "three";
+
+const pinia = createPinia()
+setActivePinia(pinia)
 
 export const useTextureStore = defineStore({
     id: 'texture',
     state: () => ({
-        name: 'text_jungle-1',
-        path: '/textures2/text_jungle-1.png',
+        name: 'tex_dark-moody-forest',
+        path: '/textures/compressed/tex_dark-moody-forest.png',
         color: 0x00ff00,
     }),
     getters: {
         material: (state) => {
-            // return new MeshBasicMaterial({ color: state.color });
             const texture = new TextureLoader().load(state.path);
+            texture.colorSpace = SRGBColorSpace
             return new MeshBasicMaterial({
                map: texture,
-               transparent: true
+               transparent: true,
             });
         },
     },

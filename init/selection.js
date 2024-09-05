@@ -51,7 +51,6 @@ export function updateConfig(config) {
             default:
         }
     }
-
 }
 
 export function getSelection() {

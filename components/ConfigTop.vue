@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import {useModelStore, useTextureStore} from "@/stores/main.js";
+import {useTextureStore} from "@/stores/main.js";
 
 const storeTexture = useTextureStore();
 
