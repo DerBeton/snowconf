@@ -1,27 +1,21 @@
 <template>
-  <div>
-
-    <div id="main-container">
-
-      <ClientOnly>
-        <ModelView ref="threejs-container" class="threejs-container" />
-      </ClientOnly>
-
-      <ConfigStart ref="test" v-if="page === 'start'" />
-
-      <ConfigMain ref="configstart-container" v-if="page === 'config'" />
-
-      <ConfigEnd ref="configend-container" v-if="page === 'share'" />
-
-    </div>
-
-  </div>
+  <component :is="configScreens[page[0]]" />
 </template>
 
 <script setup>
 import { watch, ref } from 'vue';
 import { useConfigStore } from "~/stores/main";
-import { updateConfig, isValid, selectionUrl, getSelection } from '/init/selection';
+import ConfigStart from "~/components/ConfigStart.vue";
+import ConfigMain from "~/components/ConfigMain.vue";
+import ConfigEnd from "~/components/ConfigEnd.vue";
+
+const { updateConfig, isValid } = useSelection()
+
+const configScreens = {
+  'start': ConfigStart,
+  'config': ConfigMain,
+  'share': ConfigEnd
+}
 
 const { page } = useRoute().params;
 const route = useRoute();
@@ -56,26 +50,3 @@ onMounted(() => {
 })
 
 </script>
-
-<style lang="scss" scoped>
-
-#main-container {
-  height: 100vh;
-  display: flex;
-  overflow-y: hidden;
-}
-
-.threejs-container {
-  background-color: #D9D9D9;
-}
-
-/* make little bit responsive */
-@media only screen and (max-width: 1020px)  {
-  #main-container {
-    flex-direction: column;
-    overflow-y: visible;
-  }
-}
-
-
-</style>

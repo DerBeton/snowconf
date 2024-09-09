@@ -28,13 +28,14 @@
 import { ref } from 'vue';
 const router = useRouter();
 import {useConfigStore} from "~/stores/main";
-import { updateConfig, selectionUrl, isValid } from '/init/selection';
+
+const { updateConfig, selectionUrl, isValid } = useSelection();
 
 const confCode = ref('');
 const storeConfig = useConfigStore();
 const confInvalid = ref(false);
 
-// goto Configuration page and load code if given
+// goto Configuration [page] and load code if given
 function gotoConf() {
 
   if(confCode.value.length > 0) {

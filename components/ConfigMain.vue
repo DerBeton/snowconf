@@ -59,7 +59,8 @@
 
 <script setup>
 import {useBaseStore, useModelStore, useTextureStore, useConfigStore} from "~/stores/main";
-import {selectionUrl, updateConfig, isValid} from "~/init/selection";
+
+const { updateConfig, selectionUrl, isValid } = useSelection();
 
 const storeModel = useModelStore();
 const storeBase = useBaseStore();
@@ -108,8 +109,9 @@ function actModal(type) {
   modalType.value = type;
   showModal.value = true;
 }
-function gotoPage(page) {
-  router.push(page + route.hash);
+async function gotoPage(page) {
+  // router.push([page] + route.hash);
+  await navigateTo(page + route.hash);
 }
 
 </script>

@@ -7,8 +7,8 @@ setActivePinia(pinia)
 export const useTextureStore = defineStore({
     id: 'texture',
     state: () => ({
-        name: 'tex_dark-moody-forest',
-        path: '/textures/compressed/tex_dark-moody-forest.png',
+        name: '', // tex_dark-moody-forest
+        path: '', // /textures/compressed/tex_dark-moody-forest.png
         color: 0x00ff00,
     }),
     getters: {
@@ -32,7 +32,7 @@ export const useTextureStore = defineStore({
 export const useBaseStore = defineStore({
     id: 'base',
     state: () => ({
-        color: '#000000',
+        color: '', // #000000
     }),
     getters: {
         material: (state) => {
@@ -49,8 +49,8 @@ export const useBaseStore = defineStore({
 export const useModelStore = defineStore({
     id: 'model',
     state: () => ({
-        shape: 'twin-tip',
-        profile: 'hybrid-rocker',
+        shape: '', // twin-tip
+        profile: '', // hybrid-rocker
     }),
     getters: {
         path: (state) => {
@@ -71,7 +71,7 @@ export const useModelStore = defineStore({
 export const useConfigStore = defineStore({
     id: 'config',
     state: () => ({
-        config: '' // default config can be set in selection.js
+        config: '' // default set from configs.js
     }),
     actions: {
         update(config) {

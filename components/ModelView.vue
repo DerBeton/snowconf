@@ -84,8 +84,6 @@ function loadModel(path, mat = storeTexture.material, base = storeBase.material)
   });
 }
 
-loadModel(storeModel.path);
-
 function updateRenderer() {
   renderer.setSize(width, height);
   renderer.render(scene, camera);

@@ -1,31 +1,31 @@
 <template>
   <div id="conf-slider-base" class="conf_slider">
 
-    <div v-bind:class="{ active: storeBase.color == '#000000'}" v-on:click="changeBase('#000000')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#000000'}" v-on:click="changeBase('#000000')" class="top_option">
       <div style="background-color: #000000" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#16262E'}" v-on:click="changeBase('#16262E')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#16262E'}" v-on:click="changeBase('#16262E')" class="top_option">
       <div style="background-color: #16262E" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#A34329'}" v-on:click="changeBase('#A34329')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#A34329'}" v-on:click="changeBase('#A34329')" class="top_option">
       <div style="background-color: #A34329" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#FF0000'}" v-on:click="changeBase('#FF0000')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#FF0000'}" v-on:click="changeBase('#FF0000')" class="top_option">
       <div style="background-color: #FF0000" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#F3A712'}" v-on:click="changeBase('#F3A712')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#F3A712'}" v-on:click="changeBase('#F3A712')" class="top_option">
       <div style="background-color: #F3A712" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#28AFB0'}" v-on:click="changeBase('#28AFB0')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#28AFB0'}" v-on:click="changeBase('#28AFB0')" class="top_option">
       <div style="background-color: #28AFB0" class="base-color"></div>
     </div>
 
-    <div v-bind:class="{ active: storeBase.color == '#DFDFDF'}" v-on:click="changeBase('#DFDFDF')" class="top_option">
+    <div v-bind:class="{ active: storeBase.color === '#DFDFDF'}" v-on:click="changeBase('#DFDFDF')" class="top_option">
       <div style="background-color: #DFDFDF" class="base-color"></div>
     </div>
 

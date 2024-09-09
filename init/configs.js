@@ -8,6 +8,7 @@ export const config_01 = {
     shape: {
         slots: 1,
         store: storeModel,
+        default: 1,
         map: {
             1: "twin-tip",
             2: "twin-tip-2",
@@ -18,6 +19,7 @@ export const config_01 = {
     profile: {
         slots: 1,
         store: storeModel,
+        default: 1,
         map: {
             1: "camber",
             2: "rocker",
@@ -29,6 +31,7 @@ export const config_01 = {
     top: {
         slots: 2,
         store: storeTexture,
+        default: '02',
         map: {
             '01': "tex_low-poly",
             '02': "tex_dark-moody-forest",
@@ -42,6 +45,7 @@ export const config_01 = {
     base: {
         slots: 2,
         store: storeBase,
+        default: '01',
         map: {
             '01': "#000000",
             '02': "#16262E",
