@@ -1,10 +1,11 @@
 <template>
   <div id="main-container">
-    <ClientOnly>
-        <KeepAlive>
-          <ModelView key="1" ref="threejs-container" class="threejs-container" />
-        </KeepAlive>
+
+    <div class="threejs-container">
+      <ClientOnly>
+        <ModelView />
       </ClientOnly>
+    </div>
 
     <NuxtPage />
   </div>
@@ -23,6 +24,7 @@
 }
 
 .threejs-container {
+  width: 100%;
   background-color: #D9D9D9;
 }
 
