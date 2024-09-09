@@ -139,7 +139,7 @@ onMounted(() => {
 watchEffect(() => loadModel(storeModel.path));
 
 const loop = () => {
-  controls.update;
+  controls.update();
   renderer.render(scene, camera);
   requestAnimationFrame(loop);
 }
