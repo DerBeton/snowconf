@@ -9,7 +9,7 @@ import * as THREE from 'three';
 import {useBaseStore, useModelStore, useTextureStore, useConfigStore} from '@/stores/main.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from "three/addons/controls/OrbitControls";
-// import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
 
 const storeModel = useModelStore();
 const storeTexture = useTextureStore();
@@ -52,14 +52,12 @@ let currentModell = null;
 /**
  * Environment Map
  */
-/*
 const rgbeLoader = new RGBELoader()
 rgbeLoader.load('/environment/snowy_forest_path_02_2k.hdr', (environmentMap) => {
   environmentMap.mapping = THREE.EquirectangularReflectionMapping
   scene.background = environmentMap
   // scene.environment = environmentMap // use lightning from environment map
 });
-*/
 
 // load new model with texture from init
 function loadModel(path, mat = storeTexture.material, base = storeBase.material) {
