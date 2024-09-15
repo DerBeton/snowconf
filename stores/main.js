@@ -71,11 +71,15 @@ export const useModelStore = defineStore({
 export const useConfigStore = defineStore({
     id: 'config',
     state: () => ({
-        config: '' // default set from configs.js
+        config: '', // default set from configs.js
+        rotationY: 0 // current board rotation in model view
     }),
     actions: {
         update(config) {
             this.config = config.replace('#', '');
+        },
+        rotateY(degree) {
+            this.rotationY = THREE.MathUtils.degToRad(degree);
         }
     }
 });

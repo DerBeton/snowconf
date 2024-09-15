@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.4",
+    "@tweenjs/tween.js": "^25.0.0",
     "pinia": "^2.2.2"
   }
 }

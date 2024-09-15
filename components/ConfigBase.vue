@@ -33,11 +33,14 @@
 </template>
 
 <script setup>
-import {useBaseStore, useModelStore, useTextureStore} from "@/stores/main.js";
+import {useBaseStore, useConfigStore} from "@/stores/main.js";
 
 const storeBase = useBaseStore();
+const storeConfig = useConfigStore();
+
 function changeBase(color) {
-  storeBase.changeColor(color)
+  storeBase.changeColor(color);
+  storeConfig.rotateY(-180);
 }
 
 </script>

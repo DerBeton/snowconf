@@ -6,9 +6,10 @@
 </template>
 
 <script setup>
-import {useModelStore} from "@/stores/main.js";
+import {useModelStore, useConfigStore} from "@/stores/main.js";
 
 const storeModel = useModelStore();
+const storeConfig = useConfigStore();
 
 const props = defineProps({
   title: String,
@@ -24,6 +25,7 @@ const svgPath = computed(() => {
 
 function changeShape(shape) {
   storeModel.changeShape(shape);
+  storeConfig.rotateY(0);
 }
 
 

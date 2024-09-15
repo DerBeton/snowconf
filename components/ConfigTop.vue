@@ -34,12 +34,14 @@
 </template>
 
 <script setup>
-import {useTextureStore} from "@/stores/main.js";
+import {useTextureStore, useConfigStore} from "@/stores/main.js";
 
 const storeTexture = useTextureStore();
+const storeConfig = useConfigStore();
 
 function changeTexture(texture) {
-  storeTexture.changeTexture(texture)
+  storeTexture.changeTexture(texture);
+  storeConfig.rotateY(0);
 }
 
 </script>
