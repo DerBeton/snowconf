@@ -5,20 +5,11 @@
 </template>
 
 <script setup>
-import {
-  Scene,
-  PerspectiveCamera,
-  Mesh,
-  SphereGeometry,
-  MeshBasicMaterial,
-  WebGLRenderer,
-  Fog,
-  Color,
-  AmbientLight, TextureLoader, MeshStandardMaterial
-} from 'three';
+import * as THREE from 'three';
+import {useBaseStore, useModelStore, useTextureStore, useConfigStore} from '@/stores/main.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from "three/addons/controls/OrbitControls";
-import {useBaseStore, useModelStore, useTextureStore, useConfigStore} from '@/stores/main.js';
+// import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
 
 const storeModel = useModelStore();
 const storeTexture = useTextureStore();
@@ -39,24 +30,36 @@ if(window.innerWidth < 1020) {
 
 window.addEventListener( 'resize', updateSize, false );
 
-const bgColor = new Color('#D9D9D9'); // #F8F8F8
-const scene = new Scene();
+const bgColor = new THREE.Color('#D9D9D9'); // #F8F8F8
+const scene = new THREE.Scene();
 // scene.fog = new Fog(bgColor, 0.1, 75);
 scene.background = bgColor;
 // const camera = new PerspectiveCamera(75, (window.innerWidth - 750) / window.innerHeight, 0.1, 1000);
-const camera = new PerspectiveCamera(75, width / height, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 // camera.position.set(1, 1, 2);
 camera.position.set(0, 0, 8);
 
 scene.add(camera);
 
-const ambientLight = new AmbientLight(0xffffff, 0.8);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 
 scene.add(ambientLight);
 
 const gltfLoader = new GLTFLoader();
 
 let currentModell = null;
+
+/**
+ * Environment Map
+ */
+/*
+const rgbeLoader = new RGBELoader()
+rgbeLoader.load('/environment/snowy_forest_path_02_2k.hdr', (environmentMap) => {
+  environmentMap.mapping = THREE.EquirectangularReflectionMapping
+  scene.background = environmentMap
+  // scene.environment = environmentMap // use lightning from environment map
+});
+*/
 
 // load new model with texture from init
 function loadModel(path, mat = storeTexture.material, base = storeBase.material) {
@@ -103,7 +106,7 @@ function updateSize() {
 function setRenderer() {
 
   if(experience.value) {
-    renderer = new WebGLRenderer({
+    renderer = new THREE.WebGLRenderer({
       canvas: experience.value,
       alpha: true
     });

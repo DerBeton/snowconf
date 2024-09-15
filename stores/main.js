@@ -1,5 +1,5 @@
 import {createPinia, defineStore, setActivePinia} from 'pinia';
-import {MeshBasicMaterial, SRGBColorSpace, TextureLoader} from "three";
+import * as THREE from 'three';
 
 const pinia = createPinia()
 setActivePinia(pinia)
@@ -13,9 +13,9 @@ export const useTextureStore = defineStore({
     }),
     getters: {
         material: (state) => {
-            const texture = new TextureLoader().load(state.path);
-            texture.colorSpace = SRGBColorSpace
-            return new MeshBasicMaterial({
+            const texture = new THREE.TextureLoader().load(state.path);
+            texture.colorSpace = THREE.SRGBColorSpace
+            return new THREE.MeshBasicMaterial({
                map: texture,
                transparent: true,
             });
@@ -36,7 +36,7 @@ export const useBaseStore = defineStore({
     }),
     getters: {
         material: (state) => {
-            return new MeshBasicMaterial({ color: state.color });
+            return new THREE.MeshBasicMaterial({ color: state.color });
         },
     },
     actions: {
